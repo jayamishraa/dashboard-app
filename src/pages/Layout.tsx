@@ -20,13 +20,13 @@ const NAVIGATION: Navigation = [
     segment: 'dashboard',
     title: 'Dashboard',
     icon: <DashboardIcon />,
-    // to: '/dashboard',
+    to: '/dashboard',
   },
   {
     segment: 'orders',
     title: 'Orders',
     icon: <ShoppingCartIcon />,
-    // to: '/orders',
+    to: '/orders',
   },
   {
     kind: 'divider',
@@ -45,13 +45,13 @@ const NAVIGATION: Navigation = [
         segment: 'sales',
         title: 'Sales',
         icon: <DescriptionIcon />,
-        // to: '/sales',
+        to: '/sales',
       },
       {
         segment: 'traffic',
         title: 'Traffic',
         icon: <DescriptionIcon />,
-        // to: '/traffic',
+        to: '/traffic',
       },
     ],
   },
@@ -59,7 +59,7 @@ const NAVIGATION: Navigation = [
     segment: 'integrations',
     title: 'Integrations',
     icon: <LayersIcon />,
-    // to: '/integrations',
+    to: '/integrations',
   },
 ];
 
@@ -155,7 +155,7 @@ interface DemoProps {
 export default function DashboardLayoutBasic(props: DemoProps) {
   const { window } = props;
 
-  const router = useDemoRouter('/dashboard');
+  const router = useDemoRouter('/');
 
   // Remove this const when copying and pasting into your project.
   const demoWindow = window !== undefined ? window() : undefined;

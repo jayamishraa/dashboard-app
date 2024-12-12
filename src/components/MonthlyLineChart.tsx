@@ -48,7 +48,7 @@ export default function MonthlyLineChart() {
   const salesData = aggregateSalesByMonth(userDashboardData); // Aggregate 
   console.log(salesData)
   return (
-    <div className='border flex items-center mb-2 rounded p-2 shadow-gray-300 shadow-md'>
+    <div className='border hover:shadow-lg transition-shadow duration-300flex items-center mb-2 rounded p-2 shadow-gray-300 shadow-md'>
       <LineChart
         xAxis={[
           {

@@ -112,15 +112,15 @@ const BasicPie = () => {
   const genderData = calculateGenderData(userDashboardData);
 
   return (
-    <div className=''>
-      <div className='flex mb-2 p-2 gap-2 flex-col justify-center items-center border shadow-gray-300 rounded shadow-md'>
-        <h4>Category</h4>
-        <ReusablePieChart data={categoryData} width={300} height={100} />
+    <div className='flex gap-1'>
+      <div className='card-component  flex mb-2 py-5 w-[45vw] p-2 gap-2 flex-col justify-center items-center border shadow-gray-300 rounded shadow-md'>
+        <h4>Sales by Category</h4>
+        <ReusablePieChart data={categoryData} width={400} height={150} />
       </div>
 
-      <div className='flex p-2 mb-2 gap-2 flex-col justify-center items-center border shadow-gray-300 shadow-md rounded'>
-        <h4>Gender</h4>
-        <ReusablePieChart data={genderData} width={300} height={100} />
+      <div className='card-component flex p-2 mb-2 py-5 w-[45vw] gap-2 flex-col justify-center items-center border shadow-gray-300 shadow-md rounded'>
+        <h4>Sales by Gender</h4>
+        <ReusablePieChart data={genderData} width={400} height={150} />
       </div>
     </div>
   );

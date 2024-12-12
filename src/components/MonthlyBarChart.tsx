@@ -1,13 +1,11 @@
 import { BarChart } from '@mui/x-charts/BarChart';
 import userDashboardData from '../data';  // Assuming this is where your data is stored
 
-// Helper function to extract month from date string
 const getMonthFromDate = (date: string) => {
   const month = new Date(date).getMonth();  // Get month index (0-11)
   return month;
 };
 
-// Function to aggregate purchases by category and month
 const aggregatePurchases = () => {
   const monthlyData: Record<string, Record<number, number>> = {}; // { category: { month: totalProducts } }
 
@@ -15,12 +13,10 @@ const aggregatePurchases = () => {
     Object.keys(user.purchases).forEach((category) => {
       const products = user.purchases[category as keyof typeof user.purchases];
       
-      // Loop through products and aggregate by month
       products.forEach((product) => {
         const month = getMonthFromDate(product.dateOfPurchase); // Extract month from product date
         const totalQuantity = product.quantity;
 
-        // Initialize category and month data if it doesn't exist
         if (!monthlyData[category]) {
           monthlyData[category] = {};
         }
@@ -56,7 +52,8 @@ const chartData = categoryNames.map((category) => {
 
 export default function MonthlyBarChart() {
   return (
-    <div className='border rounded p-1 shadow shadow-gray-300 flex items-center shadow-md mb-2'>
+    <div className='card-component flex flex-col justify-center items-center shadow-md mb-2'>
+      <h2 className='justify-self-center fs-xl p-2'>Montly Bar Chart</h2>
       <BarChart
         xAxis={[{ scaleType: 'band', data: months }]}
         yAxis={[{ scaleType: 'linear' }]}
@@ -64,9 +61,10 @@ export default function MonthlyBarChart() {
           data: categoryData.data,
           label: categoryData.label,
         }))}
-        width={500}
+        width={900}
         height={300}
       />
     </div>
+
   );
 }
